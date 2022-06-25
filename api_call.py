@@ -21,5 +21,3 @@ def make_restcountries_call(name_countrie):
         return languages
     else:
         raise Exception("Error api call")
-
-make_restcountries_call("cyprus")
