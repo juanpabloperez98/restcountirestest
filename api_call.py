@@ -15,9 +15,13 @@ def make_restcountries_call(name_countrie):
     response = requests.get(url) #Make request by get method
     if response.status_code == 200: # Validate status code
         response = json.loads(response.text)[0] # Convert str to dict
-        # Make a new dict and return specific data
-        languages = response.get("languages")
-        languages = list(languages.values())
-        return languages
+        data = {
+            "region":response.get("region"),
+            "city_name":response.get("name").get("common"),
+            "languages":list(response.get("languages").values())
+        }
+        return data
     else:
         raise Exception("Error api call")
+
+# make_restcountries_call("angola")
