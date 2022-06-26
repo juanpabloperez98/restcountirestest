@@ -1,26 +1,20 @@
 # Test-Tangelo-Fintech
 
-The objective of this project is make an application in python that genere a table with 4 columns 
-(*** Región ***,*** City Name ***,*** Language  ***,*** Time ***)
-Making an API call to https://restcountries.com/
+The objective of this project is make an application in python that make a call to https://restcountries.com/ API and get the language from country, after make a dataframe with the API information
 
 ## Getting Started
 
+First clone the repository and after run the next command
+
+> python main.py
+
+
 ### Dependencies
 
-* 
+The project have an requirements.txt file, so to install dependecies just need create an python enviroment and run the next command
 
-### Installing
+> pip install -r requirements.txt
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
-
-* How to run the program
-```
-
-```
 
 ## Authors
 Juan Pablo Perez Santos
