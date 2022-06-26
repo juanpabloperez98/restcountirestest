@@ -5,12 +5,14 @@ from encrypt import encrypt
 
 def make_dataframe(data):
     """ 
+        Param data (this params is the dict from API CALL)
         Make dataframe with API DATA
 
         Region - City name - Language - Time
     """
-    data_to_frame = []
+    data_to_frame = [] # List to create rows
     for language in range(len(data.get("languages"))):
+        """ Loop of all languages from API CALL """
         t0 = time.time()
         data_to_frame.append([
             data.get("region"),
@@ -20,6 +22,7 @@ def make_dataframe(data):
         t1 = time.time()
         total_time = t1-t0
         data_to_frame[language].append(total_time)
+    # Make dataframe
     df = pd.DataFrame(data_to_frame, columns=["Region","City name","Language","Time"])
     total_time = df["Time"].sum()
     time_average = df["Time"].mean()
@@ -31,6 +34,7 @@ def make_dataframe(data):
     print("\n\nTime average: ", time_average)
     print("\n\nTime min: ", time_min)
     print("\n\nTime max: ", time_max)
+    return df, [total_time,time_average,time_min,time_max],
 
 
 
