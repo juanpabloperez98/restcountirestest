@@ -34,9 +34,5 @@ def make_dataframe(data):
     print("\n\nTime average: ", time_average)
     print("\n\nTime min: ", time_min)
     print("\n\nTime max: ", time_max)
-    return df, [total_time,time_average,time_min,time_max],
+    return df, (total_time,time_average,time_min,time_max,)
 
-
-
-data = make_restcountries_call("Macau")
-make_dataframe(data)

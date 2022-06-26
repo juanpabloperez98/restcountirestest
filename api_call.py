@@ -22,6 +22,6 @@ def make_restcountries_call(name_countrie):
         }
         return data
     else:
-        raise Exception("Error api call")
+        raise Exception("\n\n\t**ALERT:error api call**\n\n")
 
 # make_restcountries_call("angola")

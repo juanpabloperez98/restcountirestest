@@ -37,11 +37,23 @@ def create_database():
                                             total_time real NOT NULL,
                                             time_average real NOT NULL,
                                             time_min real NOT NULL,
-                                            time_max real NOT NULL
+                                            time_max real NOT NULL,
+                                            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
                                         ); """
 
         _create_table(conn, sql_create_data)
     else:
         print("Error! cannot create the database connection.")
 
-create_database()
+def insert_data(conn, data):
+    sql = ''' INSERT INTO data(total_time,time_average,time_min,time_max)
+              VALUES(?,?,?,?) '''
+    try:
+        cur = conn.cursor()
+        cur.execute(sql, data)
+        conn.commit()
+        return True
+    except Exception as e:
+        return False
+
+# create_database()
